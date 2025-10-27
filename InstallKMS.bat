@@ -2,7 +2,7 @@
 REM ############################################
 REM Create By Yu Haijun
 REM Ver 25.10
-REM https://github.com/yuhaijun83/KMS
+REM https://github.com/yuhaijun83/KMS-Tools
 REM ############################################
 COLOR 0A
 
@@ -24,9 +24,10 @@ IF "%PORT_INPUT%" == "" (
 ) ELSE (
     SET KMS_PORT=%PORT_INPUT%
 )
-@ECHO.
-@ECHO Excluded TCP port range
-netsh int ipv4 show excludedportrange protocol=tcp
+
+REM @ECHO.
+REM @ECHO Excluded TCP port range
+REM netsh int ipv4 show excludedportrange protocol=tcp
 
 NET STOP vlmcsd > NUL
 
