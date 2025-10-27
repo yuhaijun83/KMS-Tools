@@ -204,8 +204,9 @@ IF "%OS_NAME%" == "Windows 10 Pro" (
     REM 9. Windows Server 2025 Datacenter
     SET KMS_KEY_ACTIVE=D764K-2NDRG-47T6Q-P8T8W-YP6DF
 ) ELSE (
-    @ECHO This version ^(%OS_NAME%^) is currently not supported.
-    GOTO LABEL_END
+    @ECHO This version ^(%OS_NAME%^) is currently not supported.Please try again...
+    @ECHO. 
+    GOTO LABEL_TYPE
 ) 
 
 IF "%KMS_TYPE_INPUT%" == "1" (
@@ -229,17 +230,26 @@ IF %ERRORLEVEL% == 0 (
 SET KMS_PORT_ACTIVE=1688
 SETLOCAL ENABLEDELAYEDEXPANSION
 SET KMS_HOST_TMP=
+SET OPEN_FLG=FALSE
 FOR %%A IN (%KMS_HOST_LIST%) do (
     SET KMS_HOST_TMP=%%A
 
-    ECHO Checking if port %KMS_PORT_ACTIVE% on !KMS_HOST_TMP! is open...
+    @ECHO Checking if port %KMS_PORT_ACTIVE% on !KMS_HOST_TMP! is open...
     powershell -Command "if ((Test-NetConnection !KMS_HOST_TMP! -Port %KMS_PORT_ACTIVE%).TcpTestSucceeded) {exit 0} else {exit 1}"
 
     IF !ERRORLEVEL! == 0 (
-        ECHO !KMS_HOST_TMP! is active and ready to provide activation services...
+        @ECHO !KMS_HOST_TMP! is active and ready to provide activation services...
         SET KMS_HOST_ACTIVE=!KMS_HOST_TMP!
+        SET OPEN_FLG=TRUE
         GOTO LABEL_ACTIVE_RUN
     )
+)
+
+IF NOT "%OPEN_FLG%" == "TRUE" (
+    CLS
+    @ECHO The all activation services is not opened! Please try again...
+    @ECHO. 
+    GOTO LABEL_TYPE
 )
 
 :LABEL_ACTIVE_RUN
@@ -257,5 +267,4 @@ REM slmgr /dlv
 REM slmgr /dli
 REM slmgr /xpr
 
-:LABEL_END
 PAUSE
