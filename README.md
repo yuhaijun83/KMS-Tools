@@ -131,21 +131,22 @@ https://www.microsoft.com/zh-cn/software-download/windows11
 Windows 11 Edition	Generic Key </br>
 Windows 11 Home: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YTMG3-N6DKC-DKB77-7M9GH-8HVX7 </br>
 Windows 11 Home N: &nbsp;&nbsp;4CPRK-NM3K3-X6XXQ-RXX86-WXCHW </br>
+</br>
 Windows 11 Home Single Language: &nbsp;&nbsp;BT79Q-G7N6G-PGBYW-4YWX6-6F4BT </br>
 Windows 11 Home Country Specific: &nbsp;&nbsp;&nbsp;N2434-X9D7W-8PF6X-8DV9T-8TYMD </br>
- </br>
+</br>
 Windows 11 Pro: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VK7JG-NPHTM-C97JM-9MPGT-3V66T </br>
 Windows 11 Pro N: &nbsp;&nbsp;2B87N-8KFHP-DKV6R-Y2C8J-PKCKT </br>
- </br>
+</br>
 Windows 11 Pro for Workstations: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DXG7C-N36C4-C4HTG-X4T3X-2YV77 </br>
 Windows 11 Pro for Workstations N: &nbsp;&nbsp;WYPNQ-8C467-V2W6J-TX4WX-WT2RQ </br>
- </br>
+</br>
 Windows 11 Pro Education: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8PTT6-RNW4C-6V7J2-C2D3X-MHBPB </br>
 Windows 11 Pro Education N: &nbsp;&nbsp;GJTYN-HDMQY-FRR76-HVGC7-QPF8P </br>
- </br>
+</br>
 Windows 11 Education: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YNMGQ-8RYV3-4PGQ3-C8XTP-7CFBY </br>
 Windows 11 Education N: &nbsp;&nbsp;&nbsp;84NGF-MHBT6-FXBX8-QWJK7-DRR8H </br>
- </br>
+</br>
 Windows 11 Enterprise: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XGVPP-NMH47-7TTHJ-W3FW7-8HV2C </br>
 Windows 11 Enterprise N: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WGGHN-J84D6-QYCPR-T7PJ7-X766F </br>
 Windows 11 Enterprise G N: &nbsp;&nbsp;&nbsp;FW7NV-4T673-HF4VX-9X4MM-B4H4T
