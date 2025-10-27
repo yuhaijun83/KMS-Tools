@@ -33,6 +33,14 @@ kms.wxlost.com </br>
 windows.kms.app </br>
 kms-default.cangshui.net </br>
 kms-shanghai01.cangshui.net </br>
+kms.lolico.moe </br>
+kms.lotro.cc </br>
+kms.luody.info </br>
+kms.moeclub.org </br>
+kms.qkeke.com </br>
+kms.tttal.com </br>
+kms8.MSGuides.com </br>
+zh.us.to
 
 ---------------------------------------------------------------------------------------------------------------------
 # (2).Command example
