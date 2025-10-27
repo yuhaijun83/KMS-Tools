@@ -45,6 +45,11 @@ zh.us.to
 ---------------------------------------------------------------------------------------------------------------------
 # (2).Command example
 
+# Windows 10 / 11 Home
+slmgr /skms s1.kms.cx </br>
+slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99 </br>
+slmgr /ato </br>
+
 # Windows 10 / 11 Professional
 slmgr /skms s1.kms.cx </br>
 slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX </br>
