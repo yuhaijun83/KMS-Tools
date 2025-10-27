@@ -128,7 +128,7 @@ https://www.microsoft.com/zh-cn/software-download/windows11
 ---------------------------------------------------------------------------------------------------------------------
 # (5).Install Key Or Change Version
 
-Windows 11 Edition	Generic Key </br>
+Windows 11 Edition	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generic Key </br>
 Windows 11 Home: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YTMG3-N6DKC-DKB77-7M9GH-8HVX7 </br>
 Windows 11 Home N: &nbsp;&nbsp;4CPRK-NM3K3-X6XXQ-RXX86-WXCHW </br>
 </br>
