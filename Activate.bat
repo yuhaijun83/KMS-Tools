@@ -108,17 +108,18 @@ IF "%KMS_PORT_INPUT%" == "" (
 :LABEL_OSLIST
 @ECHO Enter the number of the system to activate ^(default: 99^):
 @ECHO #################################################################################
-@ECHO   1. Windows 10 / 11 Professional
-@ECHO   2. Windows 10 / 11 Enterprise
-@ECHO   3. Windows 10 / 11 Professional Workstation
-@ECHO   4. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
-@ECHO   5. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
-@ECHO   6. Windows Server 2022 Standard
-@ECHO   7. Windows Server 2022 Datacenter
-@ECHO   8. Windows Server 2025 Standard
-@ECHO   9. Windows Server 2025 Datacenter
-@ECHO  99. Automatic OS type detection
-@ECHO   0. Return to the previous menu
+@ECHO   10. Windows 10 / 11 Home
+@ECHO   20. Windows 10 / 11 Professional
+@ECHO   30. Windows 10 / 11 Enterprise
+@ECHO   40. Windows 10 / 11 Professional Workstation
+@ECHO   50. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
+@ECHO   60. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
+@ECHO   70. Windows Server 2022 Standard
+@ECHO   71. Windows Server 2022 Datacenter
+@ECHO   80. Windows Server 2025 Standard
+@ECHO   81. Windows Server 2025 Datacenter
+@ECHO   99. Automatic OS type detection
+@ECHO    0. Return to the previous menu
 @ECHO #################################################################################
 SET KMS_KEY_ACTIVE=
 SET OS_TYPE_ACTIVE=
@@ -127,32 +128,35 @@ IF "%OS_TYPE_ACTIVE%" == "" (
     REM 99. Automatic OS type detection
     REM SET OS_TYPE_ACTIVE=99
     GOTO LABEL_OS_AUTO
-) ELSE IF "%OS_TYPE_ACTIVE%" == "1" (
-    REM 1. Windows 10 / 11 Professional
+) ELSE IF "%OS_TYPE_ACTIVE%" == "10" (
+    REM 10. Windows 10 / 11 Home
+    SET KMS_KEY_ACTIVE=TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
+) ELSE IF "%OS_TYPE_ACTIVE%" == "20" (
+    REM 20. Windows 10 / 11 Professional
     SET KMS_KEY_ACTIVE=W269N-WFGWX-YVC9B-4J6C9-T83GX
-) ELSE IF "%OS_TYPE_ACTIVE%" == "2" (
-    REM 2. Windows 10 / 11 Enterprise
+) ELSE IF "%OS_TYPE_ACTIVE%" == "30" (
+    REM 30. Windows 10 / 11 Enterprise
     SET KMS_KEY_ACTIVE=NPPR9-FWDCX-D2C8J-H872K-2YT43
-) ELSE IF "%OS_TYPE_ACTIVE%" == "3" (
-    REM 3. Windows 10 / 11 Professional Workstation
+) ELSE IF "%OS_TYPE_ACTIVE%" == "40" (
+    REM 40. Windows 10 / 11 Professional Workstation
     SET KMS_KEY_ACTIVE=NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J
-) ELSE IF "%OS_TYPE_ACTIVE%" == "4" (
-    REM 4. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
+) ELSE IF "%OS_TYPE_ACTIVE%" == "50" (
+    REM 50. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
     SET KMS_KEY_ACTIVE=M7XTQ-FN8P6-TTKYV-9D4CC-J462D
-) ELSE IF "%OS_TYPE_ACTIVE%" == "5" (
-    REM 5. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
+) ELSE IF "%OS_TYPE_ACTIVE%" == "60" (
+    REM 60. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
     SET KMS_KEY_ACTIVE=KBN8V-HFGQ4-MGXVD-347P6-PDQGT
-) ELSE IF "%OS_TYPE_ACTIVE%" == "6" (
-    REM 6. Windows Server 2022 Standard
+) ELSE IF "%OS_TYPE_ACTIVE%" == "70" (
+    REM 70. Windows Server 2022 Standard
     SET KMS_KEY_ACTIVE=VDYBN-27WPP-V4HQT-9VMD4-VMK7H
-) ELSE IF "%OS_TYPE_ACTIVE%" == "7" (
-    REM 7. Windows Server 2022 Datacenter
+) ELSE IF "%OS_TYPE_ACTIVE%" == "71" (
+    REM 71. Windows Server 2022 Datacenter
     SET KMS_KEY_ACTIVE=WX4NM-KYWYW-QJJR4-XV3QB-6VM33
-) ELSE IF "%OS_TYPE_ACTIVE%" == "8" (
-    REM 8. Windows Server 2025 Standard
+) ELSE IF "%OS_TYPE_ACTIVE%" == "80" (
+    REM 80. Windows Server 2025 Standard
     SET KMS_KEY_ACTIVE=TVRH6-WHNXV-R9WG3-9XRFY-MY832
-) ELSE IF "%OS_TYPE_ACTIVE%" == "9" (
-    REM 9. Windows Server 2025 Datacenter
+) ELSE IF "%OS_TYPE_ACTIVE%" == "81" (
+    REM 81. Windows Server 2025 Datacenter
     SET KMS_KEY_ACTIVE=D764K-2NDRG-47T6Q-P8T8W-YP6DF
 ) ELSE IF "%OS_TYPE_ACTIVE%" == "99" (
     REM 99. Automatic OS type detection
@@ -175,41 +179,44 @@ FOR /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Curren
 @ECHO %OS_NAME%
 ECHO.
 
-IF "%OS_NAME%" == "Windows 10 Pro" (
-    REM 1. Windows 10 / 11 Professional
+IF "%OS_NAME%" == "Windows 10 Home" (
+    REM 10. Windows 10 / 11 Home
+    SET KMS_KEY_ACTIVE=TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
+) ELSE IF "%OS_NAME%" == "Windows 10 Pro" (
+    REM 20. Windows 10 / 11 Professional
     SET KMS_KEY_ACTIVE=W269N-WFGWX-YVC9B-4J6C9-T83GX
 ) ELSE IF "%OS_NAME%" == "Windows 10 Enterprise" (
-    REM 2. Windows 10 / 11 Enterprise
+    REM 30. Windows 10 / 11 Enterprise
     SET KMS_KEY_ACTIVE=NPPR9-FWDCX-D2C8J-H872K-2YT43
 ) ELSE IF "%OS_NAME%" == "Windows 10 Pro for Workstations" (
-    REM 3. Windows 10 / 11 Professional Workstation
+    REM 40. Windows 10 / 11 Professional Workstation
     SET KMS_KEY_ACTIVE=NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J
 ) ELSE IF "%OS_NAME%" == "Windows 10 Enterprise LTSC 2019" (
-    REM 4. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
+    REM 50. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
     SET KMS_KEY_ACTIVE=M7XTQ-FN8P6-TTKYV-9D4CC-J462D
 ) ELSE IF "%OS_NAME%" == "Windows 10 Enterprise LTSC 2021" (
-    REM 4. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
+    REM 50. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
     SET KMS_KEY_ACTIVE=M7XTQ-FN8P6-TTKYV-9D4CC-J462D
 ) ELSE IF "%OS_NAME%" == "Windows 10 Enterprise LTSC 2024" (
-    REM 4. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
+    REM 50. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
     SET KMS_KEY_ACTIVE=M7XTQ-FN8P6-TTKYV-9D4CC-J462D
 ) ELSE IF "%OS_NAME%" == "Windows 10 IoT Enterprise LTSC 2021" (
-    REM 5. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
+    REM 60. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
     SET KMS_KEY_ACTIVE=KBN8V-HFGQ4-MGXVD-347P6-PDQGT
 ) ELSE IF "%OS_NAME%" == "Windows 10 IoT Enterprise LTSC 2024" (
-    REM 5. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
+    REM 60. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
     SET KMS_KEY_ACTIVE=KBN8V-HFGQ4-MGXVD-347P6-PDQGT
 ) ELSE IF "%OS_NAME%" == "Windows Server 2022 Standard" (
-    REM 6. Windows Server 2022 Standard
+    REM 70. Windows Server 2022 Standard
     SET KMS_KEY_ACTIVE=VDYBN-27WPP-V4HQT-9VMD4-VMK7H
 ) ELSE IF "%OS_NAME%" == "Windows Server 2022 Datacenter" (
-    REM 7. Windows Server 2022 Datacenter
+    REM 71. Windows Server 2022 Datacenter
     SET KMS_KEY_ACTIVE=WX4NM-KYWYW-QJJR4-XV3QB-6VM33
-)  ELSE IF "%OS_NAME%" == "Windows Server 2025 Standard" (
-    REM 8. Windows Server 2025 Standard
+) ELSE IF "%OS_NAME%" == "Windows Server 2025 Standard" (
+    REM 80. Windows Server 2025 Standard
     SET KMS_KEY_ACTIVE=TVRH6-WHNXV-R9WG3-9XRFY-MY832
 ) ELSE IF "%OS_NAME%" == "Windows Server 2025 Datacenter" (
-    REM 9. Windows Server 2025 Datacenter
+    REM 81. Windows Server 2025 Datacenter
     SET KMS_KEY_ACTIVE=D764K-2NDRG-47T6Q-P8T8W-YP6DF
 ) ELSE (
     @ECHO This version ^(%OS_NAME%^) is currently not supported.Please try again...
