@@ -7,10 +7,10 @@ REM ############################################
 COLOR 0A
 
 SET KMS_HOST_LIST=s1.kms.cx,^
+kms.micaesoft.com,^
 win.freekms.cn,^
 kms.srv.crsoo.com,^
 skms.netnr.eu.org,^
-kms.micaesoft.com,^
 kms.8b5.cn,^
 kms.litbear.cn,^
 kms.mrxn.net,^
@@ -29,7 +29,15 @@ kms.digiboy.ir,^
 kms.wxlost.com,^
 windows.kms.app,^
 kms-default.cangshui.net,^
-kms-shanghai01.cangshui.net
+kms-shanghai01.cangshui.net,^
+kms.lolico.moe,^
+kms.lotro.cc,^
+kms.luody.info,^
+kms.moeclub.org,^
+kms.qkeke.com,^
+kms.tttal.com,^
+kms8.MSGuides.com,^
+zh.us.to
 
 :LABEL_TYPE
 @ECHO Enter the number of the KMS type ^(default: 2^):
