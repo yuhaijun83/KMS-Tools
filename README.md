@@ -139,7 +139,7 @@ https://www.microsoft.com/en-us/software-download/windows11 </br>
 https://www.microsoft.com/zh-cn/software-download/windows11
 
 ---------------------------------------------------------------------------------------------------------------------
-# (5).The Key for Install Or Change Version Only（Not Activate Key）
+# (5).The Key for Install Or Change Version
 
 Windows 11 Edition	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generic Key </br>
 Windows 11 Home: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YTMG3-N6DKC-DKB77-7M9GH-8HVX7 </br>
