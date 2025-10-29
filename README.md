@@ -5,7 +5,20 @@ You need to connect to the Internet at least once within 180 days.  </br>
 InstallKMS.bat&nbsp;&nbsp;----> Install a fully Microsoft compatible KMS server.</br>
 Activate.bat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----> Activation process running on the client.</br>
 </br>
-Note: Self-activation on this machine is not allowed.
+Note: </br>
+1.Self-activation on this machine is not allowed.</br>
+2.This batch file needs to be run in administrator mode.</br>
+</br>
+</br>
+一个兼容 Microsoft 的 KMS 服务器。</br>
+KMS激活方式，您至少需要在 180 天内连接一次互联网。</br>
+</br>
+Install_KMS-Server.bat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----> 安装兼容 Microsoft 的 KMS 服务器脚本，安装后可以作为一个激活服务器使用.</br>
+Activate_ByKMS_xx-xx.bat&nbsp;&nbsp;----> Windows系统激活脚本，可激活受支持的操作系统.</br>
+</br>
+注意: </br>
+1.KMS服务器本机不支持自己激活自己(可以把KMS服务器装在虚拟机来激活客户端)。</br>
+2.脚本文件需要用管理员权限运行。
 ---------------------------------------------------------------------------------------------------------------------
 # (1).KMS List
 
@@ -126,7 +139,7 @@ https://www.microsoft.com/en-us/software-download/windows11 </br>
 https://www.microsoft.com/zh-cn/software-download/windows11
 
 ---------------------------------------------------------------------------------------------------------------------
-# (5).Install Key Or Change Version
+# (5).The Key for Install Or Change Version Only（Not Activate Key）
 
 Windows 11 Edition	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generic Key </br>
 Windows 11 Home: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YTMG3-N6DKC-DKB77-7M9GH-8HVX7 </br>

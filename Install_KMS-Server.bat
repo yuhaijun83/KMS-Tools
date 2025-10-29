@@ -1,7 +1,7 @@
 @ECHO OFF
 REM ############################################
 REM Create By Yu Haijun
-REM Ver 25.10
+REM Ver 25.10.29
 REM https://github.com/yuhaijun83/KMS-Tools
 REM ############################################
 COLOR 0A

@@ -44,8 +44,8 @@ SET KMS_PORT_ACTIVE=
 SET KMS_KEY_ACTIVE=
 
 :LABEL_HOST_INPUT
-@ECHO 请输入您要使用的KMS服务器名 ^(默认值： 空^):
-@ECHO 您也可直接敲回车键，程序将为您自动设定...
+@ECHO Please enter the name of the KMS server you want to use ^(default: none^):
+@ECHO You can also just press Enter, and the program will automatically set it for you...
 SET KMS_HOST_INPUT=
 SET /P KMS_HOST_INPUT=
 IF "%KMS_HOST_INPUT%" == "" (
@@ -58,8 +58,8 @@ IF "%KMS_HOST_INPUT%" == "" (
 
 :LABEL_PORT_INPUT
 @ECHO. 
-@ECHO 请输入您要使用的KMS服务器的端口 ^(默认值： 1688^):
-@ECHO ^[0. 返回到上一级^]
+@ECHO Enter the KMS server port to use (default: 1688):
+@ECHO ^[0. Return to the previous menu^]
 SET KMS_PORT_INPUT=
 SET /P KMS_PORT_INPUT=
 IF "%KMS_PORT_INPUT%" == "" (
@@ -67,7 +67,7 @@ IF "%KMS_PORT_INPUT%" == "" (
 ) ELSE IF "%KMS_PORT_INPUT%" == "0" (
     SET KMS_PORT_ACTIVE=
     CLS
-    @ECHO 将为您返回到上一级...
+    @ECHO Returning to the previous menu for you...
     @ECHO. 
     GOTO :LABEL_HOST_INPUT
 ) ELSE (
@@ -76,20 +76,20 @@ IF "%KMS_PORT_INPUT%" == "" (
 
 :LABEL_OS_LIST
 @ECHO.
-@ECHO 请输入您的操作系统类型 ^(默认值: 99^):
+@ECHO Please enter your operating system type (default: 99):
 @ECHO #################################################################################
-@ECHO   10. Windows 10 / 11 家庭版
-@ECHO   20. Windows 10 / 11 专业版
-@ECHO   30. Windows 10 / 11 企业版
-@ECHO   40. Windows 10 / 11 专业工作站版
-@ECHO   50. Windows 11 LTSC 2024 或者 Windows 10 LTSC 2021 / 2019
-@ECHO   60. Windows 10 IoT Enterprise LTSC 2021 或者 Windows 11 IoT Enterprise LTSC 2024
-@ECHO   70. Windows Server 2022 标准版
-@ECHO   71. Windows Server 2022 数据中心版
-@ECHO   80. Windows Server 2025 标准版
-@ECHO   81. Windows Server 2025 数据中心版
-@ECHO   99. 自动判断操作系统类型
-@ECHO    0. 返回到上一级
+@ECHO   10. Windows 10 / 11 Home
+@ECHO   20. Windows 10 / 11 Professional
+@ECHO   30. Windows 10 / 11 Enterprise
+@ECHO   40. Windows 10 / 11 Professional Workstation
+@ECHO   50. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
+@ECHO   60. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
+@ECHO   70. Windows Server 2022 Standard
+@ECHO   71. Windows Server 2022 Datacenter
+@ECHO   80. Windows Server 2025 Standard
+@ECHO   81. Windows Server 2025 Datacenter
+@ECHO   99. Automatic OS type detection
+@ECHO    0. Return to the previous menu
 @ECHO #################################################################################
 SET OS_TYPE_ACTIVE=
 SET /P OS_TYPE_ACTIVE=
@@ -141,12 +141,12 @@ IF "%OS_TYPE_ACTIVE%" == "" (
     GOTO LABEL_OS_AUTO
 ) ELSE IF "%OS_TYPE_ACTIVE%" == "0" (
     CLS
-    @ECHO 将为您返回到上一级...
+    @ECHO Returning to the previous menu for you...
     @ECHO. 
     GOTO LABEL_HOST_INPUT
 ) ELSE (
     CLS
-    @ECHO 您的输入无效，请重新输入...
+    @ECHO Your input is invalid. Please try again...
     @ECHO. 
     GOTO LABEL_OS_LIST
 )
@@ -157,58 +157,58 @@ FOR /f "tokens=2*" %%i IN ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Curren
 IF "%OS_NAME%" == "Windows 10 Home " (
     REM 10. Windows 10 / 11 Home
     SET KMS_KEY_ACTIVE=TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
-    @ECHO 您当前的操作体统为: Windows 10 / 11 Home
+    @ECHO Your current operating system is: Windows 10 / 11 Home
 ) ELSE IF "%OS_NAME%" == "Windows 10 Pro " (
     REM 20. Windows 10 / 11 Professional
     SET KMS_KEY_ACTIVE=W269N-WFGWX-YVC9B-4J6C9-T83GX
-    @ECHO 您当前的操作体统为: Windows 10 / 11 Pro
+    @ECHO Your current operating system is: Windows 10 / 11 Pro
 ) ELSE IF "%OS_NAME%" == "Windows 10 Enterprise " (
     REM 30. Windows 10 / 11 Enterprise
     SET KMS_KEY_ACTIVE=NPPR9-FWDCX-D2C8J-H872K-2YT43
-    @ECHO 您当前的操作体统为: Windows 10 / 11 Enterprise
+    @ECHO Your current operating system is: Windows 10 / 11 Enterprise
 ) ELSE IF "%OS_NAME%" == "Windows 10 Pro for Workstations " (
     REM 40. Windows 10 / 11 Professional Workstation
     SET KMS_KEY_ACTIVE=NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J
-    @ECHO 您当前的操作体统为: Windows 10 / 11 Pro for Workstations
+    @ECHO Your current operating system is: Windows 10 / 11 Pro for Workstations
 ) ELSE IF "%OS_NAME%" == "Windows 10 Enterprise LTSC 2019 " (
     REM 50. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
     SET KMS_KEY_ACTIVE=M7XTQ-FN8P6-TTKYV-9D4CC-J462D
-    @ECHO 您当前的操作体统为: Windows 10 Enterprise LTSC 2019
+    @ECHO Your current operating system is: Windows 10 Enterprise LTSC 2019
 ) ELSE IF "%OS_NAME%" == "Windows 10 Enterprise LTSC 2021 " (
     REM 50. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
     SET KMS_KEY_ACTIVE=M7XTQ-FN8P6-TTKYV-9D4CC-J462D
-    @ECHO 您当前的操作体统为: Windows 10 Enterprise LTSC 2021
+    @ECHO Your current operating system is: Windows 10 Enterprise LTSC 2021
 ) ELSE IF "%OS_NAME%" == "Windows 10 Enterprise LTSC 2024 " (
     REM 50. Windows 11 LTSC 2024 AND Windows 10 LTSC 2021 / 2019
     SET KMS_KEY_ACTIVE=M7XTQ-FN8P6-TTKYV-9D4CC-J462D
-    @ECHO 您当前的操作体统为: Windows 11 Enterprise LTSC 2024
+    @ECHO Your current operating system is: Windows 11 Enterprise LTSC 2024
 ) ELSE IF "%OS_NAME%" == "Windows 10 IoT Enterprise LTSC 2021 " (
     REM 60. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
     SET KMS_KEY_ACTIVE=KBN8V-HFGQ4-MGXVD-347P6-PDQGT
-    @ECHO 您当前的操作体统为: Windows 10 IoT Enterprise LTSC 2021
+    @ECHO Your current operating system is: Windows 10 IoT Enterprise LTSC 2021
 ) ELSE IF "%OS_NAME%" == "Windows 10 IoT Enterprise LTSC 2024 " (
     REM 60. Windows 10 IoT Enterprise LTSC 2021 AND Windows 11 IoT Enterprise LTSC 2024
     SET KMS_KEY_ACTIVE=KBN8V-HFGQ4-MGXVD-347P6-PDQGT
-    @ECHO 您当前的操作体统为: Windows 11 IoT Enterprise LTSC 2021
+    @ECHO Your current operating system is: Windows 11 IoT Enterprise LTSC 2021
 ) ELSE IF "%OS_NAME%" == "Windows Server 2022 Standard " (
     REM 70. Windows Server 2022 Standard
     SET KMS_KEY_ACTIVE=VDYBN-27WPP-V4HQT-9VMD4-VMK7H
-    @ECHO 您当前的操作体统为: Windows Server 2022 Standard
+    @ECHO Your current operating system is: Windows Server 2022 Standard
 ) ELSE IF "%OS_NAME%" == "Windows Server 2022 Datacenter " (
     REM 71. Windows Server 2022 Datacenter
     SET KMS_KEY_ACTIVE=WX4NM-KYWYW-QJJR4-XV3QB-6VM33
-    @ECHO 您当前的操作体统为: Windows Server 2022 Datacenter
+    @ECHO Your current operating system is: Windows Server 2022 Datacenter
 ) ELSE IF "%OS_NAME%" == "Windows Server 2025 Standard " (
     REM 80. Windows Server 2025 Standard
     SET KMS_KEY_ACTIVE=TVRH6-WHNXV-R9WG3-9XRFY-MY832
-    @ECHO 您当前的操作体统为: Windows Server 2025 Standard
+    @ECHO Your current operating system is: Windows Server 2025 Standard
 ) ELSE IF "%OS_NAME%" == "Windows Server 2025 Datacenter " (
     REM 81. Windows Server 2025 Datacenter
     SET KMS_KEY_ACTIVE=D764K-2NDRG-47T6Q-P8T8W-YP6DF
-    @ECHO 您当前的操作体统为: Windows Server 2025 Datacenter
+    @ECHO Your current operating system is: Windows Server 2025 Datacenter
 ) ELSE (
-    @ECHO 您的操作系统 ^( %OS_NAME% ^) 暂时还没有被支持，请重新选择...
-    @ECHO 将为您返回到上一级...
+    @ECHO The operating system ^(%OS_NAME%^) you are using is not supported at the moment. Please select again...
+    @ECHO Returning to the previous menu for you...
     @ECHO. 
     GOTO LABEL_OS_LIST
 ) 
@@ -222,15 +222,15 @@ IF "%KMS_HOST_INPUT%" == "" (
 
 :LABEL_ACTIVE_CHECK_CUSTOM
 @ECHO.
-@ECHO 正在检测KMS服务器 %KMS_HOST_ACTIVE% 的端口 %KMS_PORT_ACTIVE% 是否开放...
+@ECHO Checking if port %KMS_PORT_ACTIVE% on KMS server %KMS_HOST_ACTIVE% is open...
 powershell -Command "if ((Test-NetConnection %KMS_HOST_ACTIVE% -Port %KMS_PORT_ACTIVE%).TcpTestSucceeded) {exit 0} else {exit 1}"
 IF %ERRORLEVEL% == 0 (
-    @ECHO 您输入的KMS服务器 %KMS_HOST_ACTIVE% 可以提供服务...
+    @ECHO The KMS server %KMS_HOST_ACTIVE% you entered can provide service...
     @ECHO. 
     GOTO LABEL_ACTIVE_RUN
 ) ELSE (
-    @ECHO 您输入的KMS服务器 %KMS_HOST_ACTIVE% 暂时无法提供服务，请重新输入...
-    @ECHO 将为您返回到上一级...
+    @ECHO The KMS server %KMS_HOST_ACTIVE% is currently unavailable. Please re-enter...
+    @ECHO Returning to the previous menu for you...
     @ECHO. 
     GOTO LABEL_HOST_INPUT
 )
@@ -244,33 +244,33 @@ FOR %%A IN (%KMS_HOST_LIST%) do (
     SET KMS_HOST_TMP=%%A
 
     @ECHO.
-    @ECHO 正在检测KMS服务器 !KMS_HOST_TMP! 的端口 %KMS_PORT_ACTIVE% 是否开放...
+    @ECHO Checking if port %KMS_PORT_ACTIVE% on KMS server !KMS_HOST_TMP! is open...
     powershell -Command "if ((Test-NetConnection !KMS_HOST_TMP! -Port %KMS_PORT_ACTIVE%).TcpTestSucceeded) {exit 0} else {exit 1}"
 
     IF !ERRORLEVEL! == 0 (
-        @ECHO KMS服务器 !KMS_HOST_TMP! 可以提供服务...
+        @ECHO The KMS server !KMS_HOST_TMP! you entered can provide service...
         @ECHO. 
         SET KMS_HOST_ACTIVE=!KMS_HOST_TMP!
         SET OPEN_FLG=TRUE
         GOTO LABEL_ACTIVE_RUN
     ) ELSE (
-        @ECHO KMS服务器 !KMS_HOST_TMP! 暂时无法提供服务...
-        @ECHO 即将为您测试下一台...
+        @ECHO The KMS server %KMS_HOST_ACTIVE% is currently unavailable...
+        @ECHO Preparing to test the next device...
     )
 )
 
 IF NOT "%OPEN_FLG%" == "TRUE" (
     CLS
-    @ECHO 所有的KMS服务器木前都不可用，即将重新测试...
+    @ECHO No KMS servers are available at the moment. Starting a new test...
     @ECHO. 
     GOTO LABEL_ACTIVE_CHECK_AUTO
 )
 
 :LABEL_ACTIVE_RUN
-@ECHO 将使用下面的信息为您激活...
-@ECHO KMS 服务器主机: %KMS_HOST_ACTIVE%
-@ECHO KMS 服务器端口: %KMS_PORT_ACTIVE%
-@ECHO KMS 激活序列号: %KMS_KEY_ACTIVE%
+@ECHO The following information will be used to activate for you...
+@ECHO KMS Server Host: %KMS_HOST_ACTIVE%
+@ECHO KMS Server Port: %KMS_PORT_ACTIVE%
+@ECHO KMS Activation Key: %KMS_KEY_ACTIVE%
 
 IF "%KMS_PORT_ACTIVE%" == "1688" (
     slmgr /skms %KMS_HOST_ACTIVE%
